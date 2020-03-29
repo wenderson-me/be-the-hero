@@ -1,5 +1,5 @@
 const crypto = require('crypto');
 
-export default function generationUniqueId() {
+module.exports = function generationUniqueId() {
     return crypto.randomBytes(4).toString('HEX');
 }
