@@ -1,5 +1,6 @@
 const express = require ('express');
 const routes = require('./routes');
+const { errors } = require('celebrate');
 const cors = require ('cors');
 
 const app = express();
@@ -8,6 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); //requisição json
 app.use(routes);
+app.use(errors());
 
 
 /**
