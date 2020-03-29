@@ -5,11 +5,12 @@ const cors = require ('cors');
 
 const app = express();
  
- 
 app.use(cors());
 app.use(express.json()); //requisição json
 app.use(routes);
 app.use(errors());
+
+module.exports = app;
 
 
 /**
@@ -63,5 +64,3 @@ app.use(errors());
  * Driver: SELECT * FROM users
  * Query Builder: table('users').select('*').where()
  */
-
-app.listen(3333);
