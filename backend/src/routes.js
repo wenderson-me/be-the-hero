@@ -10,13 +10,19 @@ const ProfileController = require('./controllers/ProfileController');
 
 const routes = express.Router();
 
+/**
+ * QUERY
+ * ROUTE
+ * PARAMS
+ */
+
 routes.post('/sessions', SessionController.create);
 
 routes.post('/ongs',  celebrate({
     [Segments.BODY]: Joi.object().keys({
         name: Joi.string().required(),
         email:Joi.string().required().email(),
-        whatsapp: Joi.number().required().min(10).max(11),
+      //  whatsapp: Joi.number().required().min(10).max(11),
         city: Joi.string().required(),
         uf: Joi.string().required().length(2),
     })
